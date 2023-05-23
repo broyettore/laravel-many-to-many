@@ -100,6 +100,7 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
+        
         $project->slug = Str::slug($data["name"]);
 
             if (isset($data['image'])) {
