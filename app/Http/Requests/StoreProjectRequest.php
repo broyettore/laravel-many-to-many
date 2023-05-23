@@ -32,7 +32,8 @@ class StoreProjectRequest extends FormRequest
             "progress_status" => "required",
             "slug" => "nullable",
             "image" => "nullable|image",
-            "type_id" => "nullable|exists:types,id"
+            "type_id" => "nullable|exists:types,id",
+            "technologies" => "nullable|exists:technologies,id"
         ];
     }
 }

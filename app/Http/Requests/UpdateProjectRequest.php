@@ -31,7 +31,9 @@ class UpdateProjectRequest extends FormRequest
             "end" => "required",
             "progress_status" => "required",
             "slug" => "nullable",
-            "image" => "nullable|image"
+            "image" => "nullable|image",
+            "type_id" => "nullable|exists:types,id",
+            "technologies" => "nullable|exists:technologies,id"
         ];;
     }
 }

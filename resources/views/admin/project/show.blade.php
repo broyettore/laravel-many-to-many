@@ -7,6 +7,17 @@
     @if ($project->type_id)
         <h3 class="mb-3">Type: {{ $project->type->name }}</h3>
     @endif
+    @if ($project->technologies)
+    <h4 class="mb-3">Technologies: 
+        @foreach ($project->technologies as $technology)
+        @if ($loop->last)
+            <span>{{ $technology->name}}</span>.
+            @else     
+            <span>{{ $technology->name}}</span>,
+            @endif
+        @endforeach
+    </h4>
+    @endif
     @if ($project->image)
     <div class="project-img mb-3">
         <img src=" {{ asset("storage/" . $project->image) }}" alt="{{ $project->name }}">
